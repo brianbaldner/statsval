@@ -1,0 +1,299 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{38850A80-A821-4DDD-A86C-90FAFE3C1A96}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>uselessapp</RootNamespace>
+    <AssemblyName>StatsVal Companion</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\brian\Documents\StatsValCompanionbuild\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>0.2.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>D46D5BA11ED76A2E7C392A006D6C24FC34363ED3</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>uselessapp_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>statsvalkey.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoUpdater.NET, Version=1.6.4.0, Culture=neutral, PublicKeyToken=501435c91b35f4bc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autoupdater.NET.Official.1.6.4\lib\net45\AutoUpdater.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="ControlzEx, Version=4.0.0.0, Culture=neutral, PublicKeyToken=69f1c32f803d307e, processorArchitecture=MSIL">
+      <HintPath>..\packages\ControlzEx.4.4.0\lib\net462\ControlzEx.dll</HintPath>
+    </Reference>
+    <Reference Include="INIFileParser, Version=2.5.2.0, Culture=neutral, PublicKeyToken=79af7b307b65cf3c, processorArchitecture=MSIL">
+      <HintPath>..\packages\ini-parser-netstandard.2.5.2\lib\net20\INIFileParser.dll</HintPath>
+    </Reference>
+    <Reference Include="MahApps.Metro, Version=2.0.0.0, Culture=neutral, PublicKeyToken=51482d6f650b2b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\MahApps.Metro.2.4.5\lib\net47\MahApps.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.JsonWebTokens, Version=6.11.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.JsonWebTokens.6.11.0\lib\net472\Microsoft.IdentityModel.JsonWebTokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Logging, Version=6.11.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Logging.6.11.0\lib\net472\Microsoft.IdentityModel.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Tokens, Version=6.11.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Tokens.6.11.0\lib\net472\Microsoft.IdentityModel.Tokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xaml.Behaviors, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Xaml.Behaviors.Wpf.1.1.19\lib\net45\Microsoft.Xaml.Behaviors.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=106.11.7.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.106.11.7\lib\net452\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WpfAnimatedGif, Version=2.0.0.0, Culture=neutral, PublicKeyToken=9e7cd3b544a090dc, processorArchitecture=MSIL">
+      <HintPath>..\packages\WpfAnimatedGif.2.0.0\lib\net40\WpfAnimatedGif.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Class1.cs" />
+    <Compile Include="Startup.cs" />
+    <Compile Include="ValNuget - Copy\accountXP.cs" />
+    <Compile Include="ValNuget - Copy\auth.cs" />
+    <Compile Include="ValNuget - Copy\balance.cs" />
+    <Compile Include="ValNuget - Copy\Class1.cs" />
+    <Compile Include="ValNuget - Copy\comphistory.cs" />
+    <Compile Include="ValNuget - Copy\content.cs" />
+    <Compile Include="ValNuget - Copy\entitlements.cs" />
+    <Compile Include="ValNuget - Copy\enums.cs" />
+    <Compile Include="ValNuget - Copy\getmatch.cs" />
+    <Compile Include="ValNuget - Copy\getparty.cs" />
+    <Compile Include="ValNuget - Copy\getplayer.cs" />
+    <Compile Include="ValNuget - Copy\inventory.cs" />
+    <Compile Include="ValNuget - Copy\leaderboard.cs" />
+    <Compile Include="ValNuget - Copy\match.cs" />
+    <Compile Include="ValNuget - Copy\matches.cs" />
+    <Compile Include="ValNuget - Copy\mmr.cs" />
+    <Compile Include="ValNuget - Copy\offers.cs" />
+    <Compile Include="ValNuget - Copy\partyinfo.cs" />
+    <Compile Include="ValNuget - Copy\pregamegetmatch.cs" />
+    <Compile Include="ValNuget - Copy\pregameplayer.cs" />
+    <Compile Include="ValNuget - Copy\presence.cs" />
+    <Compile Include="ValNuget - Copy\selectagent.cs" />
+    <Compile Include="ValNuget - Copy\storefront.cs" />
+    <Compile Include="ValNuget - Copy\username.cs" />
+    <Compile Include="ValNuget - Copy\websocket.cs" />
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="statsvalkey.pfx" />
+    <None Include="uselessapp_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\TX_CompetitiveTier_Large_21.png" />
+    <Resource Include="Images\TX_CompetitiveTier_Large_22.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\IconLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons8-horizontal-line-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons8-multiply-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons8-unchecked-checkbox-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\117ed9e3-49f3-6512-3ccf-0cada7e3823b.png" />
+    <Resource Include="Images\1e58de9c-4950-5125-93e9-a0aee9f98746.png" />
+    <Resource Include="Images\320b2a48-4d9b-a075-30f1-1f93a9b638fa.png" />
+    <Resource Include="Images\41fb69c1-4189-7b37-f117-bcaf1e96f1bf.png" />
+    <Resource Include="Images\569fdd95-4d10-43ab-ca70-79becc718b46.png" />
+    <Resource Include="Images\5f8d3a7f-467b-97f3-062c-13acf203c006.png" />
+    <Resource Include="Images\6f2a04ca-43e0-be17-7f36-b3908627744d.png" />
+    <Resource Include="Images\707eab51-4836-f488-046a-cda6bf494859.png" />
+    <Resource Include="Images\7f94d92c-4234-0a36-9646-3a87eb8b5c89.png" />
+    <Resource Include="Images\8e253930-4c05-31dd-1b6c-968525494517.png" />
+    <Resource Include="Images\9f0d8ba9-4140-b941-57d3-a7ad57c6b417.png" />
+    <Resource Include="Images\a3bfb853-43b2-7238-a4f1-ad90e9e46bcc.png" />
+    <Resource Include="Images\add6443a-41bd-e414-f6ad-e58d267f4e95.png" />
+    <Resource Include="Images\Ascent.png" />
+    <Resource Include="Images\Bind.png" />
+    <Resource Include="Images\Breeze.png" />
+    <Resource Include="Images\ded3520f-4264-bfed-162d-b080e2abccf9.png" />
+    <Resource Include="Images\eb93336a-449b-9c1b-0a54-a891f7921d69.png" />
+    <Resource Include="Images\f94c3b30-42be-e959-889c-5aa313dba261.png" />
+    <Resource Include="Images\Haven.png" />
+    <Resource Include="Images\Icebox.png" />
+    <Resource Include="Images\image0.png" />
+    <Resource Include="Images\Split.png" />
+    <Resource Include="Images\StatsValLogo.png" />
+    <Resource Include="Images\TX_CompetitiveTier_Large_0.png" />
+    <Resource Include="Images\TX_CompetitiveTier_Large_10.png" />
+    <Resource Include="Images\TX_CompetitiveTier_Large_11.png" />
+    <Resource Include="Images\TX_CompetitiveTier_Large_12.png" />
+    <Resource Include="Images\TX_CompetitiveTier_Large_13.png" />
+    <Resource Include="Images\TX_CompetitiveTier_Large_14.png" />
+    <Resource Include="Images\TX_CompetitiveTier_Large_15.png" />
+    <Resource Include="Images\TX_CompetitiveTier_Large_16.png" />
+    <Resource Include="Images\TX_CompetitiveTier_Large_17.png" />
+    <Resource Include="Images\TX_CompetitiveTier_Large_18.png" />
+    <Resource Include="Images\TX_CompetitiveTier_Large_19.png" />
+    <Resource Include="Images\TX_CompetitiveTier_Large_20.png" />
+    <Resource Include="Images\TX_CompetitiveTier_Large_23.png" />
+    <Resource Include="Images\TX_CompetitiveTier_Large_24.png" />
+    <Resource Include="Images\TX_CompetitiveTier_Large_3.png" />
+    <Resource Include="Images\TX_CompetitiveTier_Large_4.png" />
+    <Resource Include="Images\TX_CompetitiveTier_Large_5.png" />
+    <Resource Include="Images\TX_CompetitiveTier_Large_6.png" />
+    <Resource Include="Images\TX_CompetitiveTier_Large_7.png" />
+    <Resource Include="Images\TX_CompetitiveTier_Large_8.png" />
+    <Resource Include="Images\TX_CompetitiveTier_Large_9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\1490.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\spike.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\background.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

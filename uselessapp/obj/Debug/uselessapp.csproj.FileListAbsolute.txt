@@ -1,0 +1,49 @@
+C:\Users\brian\source\repos\uselessapp\uselessapp\obj\Debug\uselessapp.csprojAssemblyReference.cache
+C:\Users\brian\source\repos\uselessapp\uselessapp\obj\Debug\MainWindow.g.cs
+C:\Users\brian\source\repos\uselessapp\uselessapp\obj\Debug\App.g.cs
+C:\Users\brian\source\repos\uselessapp\uselessapp\obj\Debug\MainWindow.baml
+C:\Users\brian\source\repos\uselessapp\uselessapp\obj\Debug\uselessapp.Properties.Resources.resources
+C:\Users\brian\source\repos\uselessapp\uselessapp\obj\Debug\uselessapp.csproj.GenerateResource.cache
+C:\Users\brian\source\repos\uselessapp\uselessapp\obj\Debug\uselessapp.csproj.CoreCompileInputs.cache
+C:\Users\brian\source\repos\uselessapp\uselessapp\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\brian\source\repos\uselessapp\uselessapp\bin\Debug\Microsoft.IdentityModel.Logging.dll
+C:\Users\brian\source\repos\uselessapp\uselessapp\bin\Debug\Microsoft.IdentityModel.Tokens.dll
+C:\Users\brian\source\repos\uselessapp\uselessapp\bin\Debug\Newtonsoft.Json.dll
+C:\Users\brian\source\repos\uselessapp\uselessapp\bin\Debug\RestSharp.dll
+C:\Users\brian\source\repos\uselessapp\uselessapp\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.xml
+C:\Users\brian\source\repos\uselessapp\uselessapp\bin\Debug\Microsoft.IdentityModel.Logging.xml
+C:\Users\brian\source\repos\uselessapp\uselessapp\bin\Debug\Microsoft.IdentityModel.Tokens.xml
+C:\Users\brian\source\repos\uselessapp\uselessapp\bin\Debug\Newtonsoft.Json.xml
+C:\Users\brian\source\repos\uselessapp\uselessapp\bin\Debug\RestSharp.xml
+C:\Users\brian\source\repos\uselessapp\uselessapp\obj\Debug\uselessapp.csproj.CopyComplete
+C:\Users\brian\source\repos\uselessapp\uselessapp\bin\Debug\WpfAnimatedGif.dll
+C:\Users\brian\source\repos\uselessapp\uselessapp\bin\Debug\WpfAnimatedGif.pdb
+C:\Users\brian\source\repos\uselessapp\uselessapp\bin\Debug\WpfAnimatedGif.xml
+C:\Users\brian\source\repos\uselessapp\uselessapp\bin\Debug\StatsVal Companion.exe.config
+C:\Users\brian\source\repos\uselessapp\uselessapp\bin\Debug\StatsVal Companion.exe.manifest
+C:\Users\brian\source\repos\uselessapp\uselessapp\bin\Debug\StatsVal Companion.application
+C:\Users\brian\source\repos\uselessapp\uselessapp\bin\Debug\StatsVal Companion.exe
+C:\Users\brian\source\repos\uselessapp\uselessapp\bin\Debug\StatsVal Companion.pdb
+C:\Users\brian\source\repos\uselessapp\uselessapp\bin\Debug\AutoUpdater.NET.dll
+C:\Users\brian\source\repos\uselessapp\uselessapp\bin\Debug\ControlzEx.dll
+C:\Users\brian\source\repos\uselessapp\uselessapp\bin\Debug\INIFileParser.dll
+C:\Users\brian\source\repos\uselessapp\uselessapp\bin\Debug\MahApps.Metro.dll
+C:\Users\brian\source\repos\uselessapp\uselessapp\bin\Debug\Microsoft.Xaml.Behaviors.dll
+C:\Users\brian\source\repos\uselessapp\uselessapp\bin\Debug\AutoUpdater.NET.pdb
+C:\Users\brian\source\repos\uselessapp\uselessapp\bin\Debug\AutoUpdater.NET.xml
+C:\Users\brian\source\repos\uselessapp\uselessapp\bin\Debug\ControlzEx.pdb
+C:\Users\brian\source\repos\uselessapp\uselessapp\bin\Debug\ControlzEx.xml
+C:\Users\brian\source\repos\uselessapp\uselessapp\bin\Debug\INIFileParser.xml
+C:\Users\brian\source\repos\uselessapp\uselessapp\bin\Debug\MahApps.Metro.pdb
+C:\Users\brian\source\repos\uselessapp\uselessapp\bin\Debug\MahApps.Metro.xml
+C:\Users\brian\source\repos\uselessapp\uselessapp\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+C:\Users\brian\source\repos\uselessapp\uselessapp\bin\Debug\Microsoft.Xaml.Behaviors.xml
+C:\Users\brian\source\repos\uselessapp\uselessapp\bin\Debug\de\MahApps.Metro.resources.dll
+C:\Users\brian\source\repos\uselessapp\uselessapp\obj\Debug\StatsVal Companion_MarkupCompile.cache
+C:\Users\brian\source\repos\uselessapp\uselessapp\obj\Debug\StatsVal Companion_MarkupCompile.lref
+C:\Users\brian\source\repos\uselessapp\uselessapp\obj\Debug\App.baml
+C:\Users\brian\source\repos\uselessapp\uselessapp\obj\Debug\StatsVal Companion.g.resources
+C:\Users\brian\source\repos\uselessapp\uselessapp\obj\Debug\StatsVal Companion.exe.manifest
+C:\Users\brian\source\repos\uselessapp\uselessapp\obj\Debug\StatsVal Companion.application
+C:\Users\brian\source\repos\uselessapp\uselessapp\obj\Debug\StatsVal Companion.exe
+C:\Users\brian\source\repos\uselessapp\uselessapp\obj\Debug\StatsVal Companion.pdb

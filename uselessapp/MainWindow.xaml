@@ -1,0 +1,1862 @@
+﻿<Window
+    x:Class="uselessapp.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:gif="http://wpfanimatedgif.codeplex.com"
+    xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="MainWindow"
+    Width="848.01"
+    Height="491.714"
+    Background="#181735"
+    Closing="Window_Closing"
+    ResizeMode="NoResize"
+    WindowStyle="None"
+    mc:Ignorable="d">
+    <Window.Resources>
+        <ControlTemplate x:Key="MatchData" TargetType="Button">
+            <Border
+                Grid.Row="0"
+                Height="65"
+                Margin="5,0,5,0"
+                VerticalAlignment="Top"
+                Background="{TemplateBinding Background}"
+                BorderBrush="#181A20"
+                BorderThickness="3">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="15*" />
+                        <ColumnDefinition Width="12*" />
+                        <ColumnDefinition Width="19*" />
+                        <ColumnDefinition Width="15*" />
+                        <ColumnDefinition Width="15*" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0">
+                        <TextBlock
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Top"
+                            FontSize="15"
+                            FontWeight="Medium"
+                            Foreground="LightGray"
+                            Text="{TemplateBinding ContentStringFormat}" />
+                        <TextBlock
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            FontSize="25"
+                            FontWeight="Medium"
+                            Foreground="White"
+                            Text="{TemplateBinding Name}" />
+                    </StackPanel>
+                    <StackPanel Grid.Column="1">
+                        <TextBlock
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Top"
+                            FontSize="15"
+                            FontWeight="Medium"
+                            Foreground="LightGray"
+                            Text="Score" />
+                        <TextBlock
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            FontSize="25"
+                            FontWeight="Medium"
+                            Foreground="White"
+                            Text="{TemplateBinding Tag}" />
+                    </StackPanel>
+                    <StackPanel Grid.Column="2">
+                        <TextBlock
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Top"
+                            FontSize="15"
+                            FontWeight="Medium"
+                            Foreground="LightGray"
+                            Text="K/D/A" />
+                        <TextBlock
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            FontSize="25"
+                            FontWeight="Medium"
+                            Foreground="White"
+                            Text="{TemplateBinding CommandParameter}" />
+                    </StackPanel>
+                    <StackPanel Grid.Column="3">
+                        <TextBlock
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Top"
+                            FontSize="15"
+                            FontWeight="Medium"
+                            Foreground="LightGray"
+                            Text="KD" />
+                        <TextBlock
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            FontSize="25"
+                            FontWeight="Medium"
+                            Foreground="White"
+                            Text="{TemplateBinding Content}" />
+                    </StackPanel>
+                    <StackPanel Grid.Column="5">
+                        <TextBlock
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Top"
+                            FontSize="15"
+                            FontWeight="Medium"
+                            Foreground="LightGray"
+                            Text="Score" />
+                        <TextBlock
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            FontSize="25"
+                            FontWeight="Medium"
+                            Foreground="White"
+                            Text="{TemplateBinding Uid}" />
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </ControlTemplate>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25" />
+            <RowDefinition Name="parentgrid" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.ColumnSpan="2" Background="#0F0F2D">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="66" />
+                <ColumnDefinition Width="66" />
+                <ColumnDefinition Width="66" />
+                <ColumnDefinition Width="66" />
+                <ColumnDefinition Width="66" />
+                <ColumnDefinition Width="65*" />
+                <ColumnDefinition Width="65*" />
+                <ColumnDefinition Width="65*" />
+                <ColumnDefinition Width="65*" />
+                <ColumnDefinition Width="65*" />
+                <ColumnDefinition Width="66" />
+                <ColumnDefinition Width="66" />
+                <ColumnDefinition Width="66" />
+            </Grid.ColumnDefinitions>
+            <Image
+                Grid.Column="0"
+                Width="23"
+                Height="23"
+                Source="Images/IconLogo.png" />
+            <TextBlock
+                Name="HomeTitle"
+                Grid.Column="1"
+                Margin="14.015,0,13.708,6.108"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Bottom"
+                Foreground="White"
+                MouseLeftButtonUp="TextBlock_MouseLeftButtonUp"
+                Text="StatsVal" />
+            <TextBlock
+                Name="StatsTitle"
+                Grid.Column="2"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Foreground="LightGray"
+                MouseLeftButtonUp="StatsTitle_MouseLeftButtonUp"
+                Text="Stats" />
+            <TextBlock
+                Name="LMTitle"
+                Grid.Column="3"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Foreground="LightGray"
+                MouseLeftButtonUp="TextBlock_MouseLeftButtonUp_1"
+                Text="Live Match" />
+            <TextBlock
+                x:Name="SettingsTitle"
+                Grid.Column="4"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Foreground="LightGray"
+                MouseLeftButtonUp="TextBlock_MouseLeftButtonUp_2"
+                Text="Settings" />
+            <Button
+                Grid.Column="5"
+                Grid.ColumnSpan="5"
+                Opacity="0"
+                PreviewMouseDown="Button_MouseLeftButtonDown" />
+            <Image
+                Grid.Column="12"
+                Width="20"
+                Height="20"
+                MouseLeftButtonUp="Image_MouseLeftButtonUp"
+                RenderTransformOrigin="0.502,0.502"
+                Source="Images/icons8-multiply-64.png" />
+            <Image
+                Grid.Column="11"
+                Width="20"
+                Height="20"
+                Source="Images/icons8-unchecked-checkbox-64.png" />
+            <Image
+                Grid.Column="10"
+                Width="20"
+                Height="20"
+                MouseLeftButtonUp="Image_MouseLeftButtonUp_1"
+                Source="Images/icons8-horizontal-line-64.png" />
+        </Grid>
+
+        <!--  HomePage  -->
+        <StackPanel
+            Name="Home"
+            Grid.Row="1"
+            VerticalAlignment="Center"
+            Visibility="Visible">
+            <StackPanel.Background>
+                <ImageBrush ImageSource="Images/background.png"/>
+            </StackPanel.Background>
+            <TextBlock FontSize="110"/>
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                <Image
+                    Width="50"
+                    Height="50"
+                    Source="Images/IconLogo.png" />
+                <TextBlock
+                    VerticalAlignment="Center"
+                    FontSize="35"
+                    FontWeight="Medium"
+                    Foreground="White"
+                    Text=" StatsVal" />
+            </StackPanel>
+
+            <TextBlock
+                FontSize="25"
+                FontWeight="Medium"
+                Foreground="White"
+                Text="" />
+            <TextBox
+                x:Name="playername0"
+                Width="250"
+                Background="White"
+                BorderThickness="0"
+                CaretBrush="Black"
+                FontSize="25"
+                FontWeight="Medium"
+                Foreground="Black"
+                TextAlignment="Center" />
+            <TextBlock
+                FontSize="10"
+                FontWeight="Medium"
+                Foreground="White"
+                Text="" />
+            <Button
+                Width="120"
+                Height="35"
+                Background="#dc3d4b"
+                BorderBrush="White"
+                BorderThickness="1.5"
+                Click="GetStats"
+                Content="Submit"
+                FontSize="15"
+                FontWeight="Medium"
+                Foreground="White" />
+            <TextBlock FontSize="110"/>
+        </StackPanel>
+
+        <!--  StatsPage  -->
+        <StackPanel
+            Name="Stats"
+            Grid.Row="1"
+            Margin="0,15,0,0"
+            VerticalAlignment="Top"
+            Visibility="Collapsed">
+            <Grid>
+                <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
+                    <Image
+                        x:Name="AgentImage"
+                        Width="85"
+                        Height="85"
+                        Margin="10,0,0,0"
+                        HorizontalAlignment="Left"
+                        Source="Images/8e253930-4c05-31dd-1b6c-968525494517.png" />
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                    <TextBlock
+                        Name="Name"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="45"
+                        FontWeight="Medium"
+                        Foreground="White"
+                        Text="Bigtaco" />
+                </StackPanel>
+                <Grid Margin="0,0,10,0" HorizontalAlignment="Right">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="auto" />
+                    </Grid.ColumnDefinitions>
+                    <Image
+                        x:Name="RankIcon"
+                        Grid.Column="0"
+                        Width="50"
+                        Height="50"
+                        HorizontalAlignment="Left"
+                        Source="Images/TX_CompetitiveTier_Large_24.png" />
+                    <StackPanel
+                        Grid.Column="1"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center">
+                        <TextBlock
+                            x:Name="RRText"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            FontSize="30"
+                            FontWeight="Medium"
+                            Foreground="White"
+                            Text="25 RR" />
+                        <ProgressBar
+                            x:Name="RRBar"
+                            Width="100"
+                            Height="5"
+                            Foreground="#dc3d4b"
+                            Value="50" />
+                    </StackPanel>
+                </Grid>
+            </Grid>
+            <TextBlock FontSize="10" Text="" />
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="35*" />
+                    <ColumnDefinition Width="65*" />
+                </Grid.ColumnDefinitions>
+                <Border
+                    Height="105"
+                    Margin="10,0,0,0"
+                    VerticalAlignment="Top"
+                    Background="#FF292929"
+                    BorderBrush="#FF292929"
+                    BorderThickness="3"
+                    CornerRadius="10">
+                    <Grid Grid.Column="0" Height="100">
+                        <Grid>
+                            <TextBlock
+                                x:Name="StatTitle"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Top"
+                                FontSize="25"
+                                FontWeight="Medium"
+                                Foreground="White"
+                                Text="Last 5 Comp Games" />
+                        </Grid>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="50*" />
+                                <ColumnDefinition Width="50*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="auto" />
+                            </Grid.RowDefinitions>
+                            <TextBlock FontSize="25" Text="" />
+                            <TextBlock
+                                x:Name="KD"
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Top"
+                                FontSize="25"
+                                FontWeight="Medium"
+                                Foreground="White"
+                                Text="KD: 1.23" />
+                            <TextBlock
+                                x:Name="Win"
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Top"
+                                FontSize="25"
+                                FontWeight="Medium"
+                                Foreground="White"
+                                Text="Win %: 50%" />
+                            <TextBlock
+                                x:Name="Score"
+                                Grid.Row="2"
+                                Grid.Column="0"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Top"
+                                FontSize="25"
+                                FontWeight="Medium"
+                                Foreground="White"
+                                Text="Score: 200" />
+                        </Grid>
+                    </Grid>
+                </Border>
+                <Grid Name="Games" Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+
+                </Grid>
+            </Grid>
+        </StackPanel>
+
+        <!--  Live Match  -->
+        <StackPanel
+            Name="LiveMatchPage"
+            Grid.Row="1"
+            Margin="0,0,0,0"
+            VerticalAlignment="Top"
+            Visibility="Collapsed">
+            <StackPanel.Background>
+                <ImageBrush
+                    x:Name="BackgroundImg"
+                    ImageSource="Images/Ascent.png"
+                    Stretch="UniformToFill" />
+            </StackPanel.Background>
+            <TextBlock
+                x:Name="Mode"
+                Grid.Row="1"
+                Grid.Column="1"
+                Margin="0,5,0,0"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"
+                FontSize="25"
+                FontWeight="Medium"
+                Foreground="LightGray"
+                Text="Competitive" />
+            <TextBlock
+                Grid.Row="1"
+                Grid.Column="1"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"
+                FontSize="2"
+                FontWeight="Medium"
+                Foreground="LightGray"
+                Text="" />
+            <TextBlock
+                x:Name="Map"
+                Grid.Row="1"
+                Grid.Column="1"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"
+                FontSize="30"
+                FontWeight="Medium"
+                Foreground="White"
+                Text="Ascent" />
+            <Grid Margin="10,0,10,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <TextBlock
+                    x:Name="Score0"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    FontSize="30"
+                    FontWeight="Medium"
+                    Foreground="White"
+                    Text="0" />
+                <TextBlock
+                    x:Name="Score1"
+                    Grid.Column="2"
+                    Grid.ColumnSpan="2"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    FontSize="30"
+                    FontWeight="Medium"
+                    Foreground="White"
+                    Text="0" />
+                <Image
+                    Grid.Column="0"
+                    Grid.ColumnSpan="4"
+                    Width="60"
+                    Height="60"
+                    Source="Images/spike.png" />
+            </Grid>
+            <Grid Margin="10,0,10,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0" Background="#BF00554D">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="60" />
+                        <ColumnDefinition Width="50*" />
+                        <ColumnDefinition Width="25*" />
+                        <ColumnDefinition Width="25*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="60" />
+                    </Grid.RowDefinitions>
+                    <!--  Ranks  -->
+                    <Image
+                        Name="RankIcon00"
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Width="60"
+                        Height="60"
+                        Source="Images/TX_CompetitiveTier_Large_0.png" />
+                    <Image
+                        Name="RankIcon01"
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        Width="60"
+                        Height="60"
+                        Source="Images/TX_CompetitiveTier_Large_0.png" />
+                    <Image
+                        Name="RankIcon02"
+                        Grid.Row="2"
+                        Grid.Column="0"
+                        Width="60"
+                        Height="60"
+                        Source="Images/TX_CompetitiveTier_Large_0.png" />
+                    <Image
+                        Name="RankIcon03"
+                        Grid.Row="3"
+                        Grid.Column="0"
+                        Width="60"
+                        Height="60"
+                        Source="Images/TX_CompetitiveTier_Large_0.png" />
+                    <Image
+                        Name="RankIcon04"
+                        Grid.Row="4"
+                        Grid.Column="0"
+                        Width="60"
+                        Height="60"
+                        Source="Images/TX_CompetitiveTier_Large_0.png" />
+
+                    <!--  Names  -->
+                    <TextBlock
+                        Name="Name00"
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Margin="5,0,0,0"
+                        VerticalAlignment="Center"
+                        FontSize="25"
+                        FontWeight="Medium"
+                        Foreground="White"
+                        Text="Name" />
+                    <TextBlock
+                        Name="Name01"
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        Margin="5,0,0,0"
+                        VerticalAlignment="Center"
+                        FontSize="25"
+                        FontWeight="Medium"
+                        Foreground="White"
+                        Text="Name" />
+                    <TextBlock
+                        Name="Name02"
+                        Grid.Row="2"
+                        Grid.Column="1"
+                        Margin="5,0,0,0"
+                        VerticalAlignment="Center"
+                        FontSize="25"
+                        FontWeight="Medium"
+                        Foreground="White"
+                        Text="Name" />
+                    <TextBlock
+                        Name="Name03"
+                        Grid.Row="3"
+                        Grid.Column="1"
+                        Margin="5,0,0,0"
+                        VerticalAlignment="Center"
+                        FontSize="25"
+                        FontWeight="Medium"
+                        Foreground="White"
+                        Text="Name" />
+                    <TextBlock
+                        Name="Name04"
+                        Grid.Row="4"
+                        Grid.Column="1"
+                        Margin="5,0,0,0"
+                        VerticalAlignment="Center"
+                        FontSize="25"
+                        FontWeight="Medium"
+                        Foreground="White"
+                        Text="Name" />
+
+                    <!--  Win%  -->
+                    <TextBlock
+                        Name="Win00"
+                        Grid.Row="0"
+                        Grid.Column="2"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="25"
+                        FontWeight="Medium"
+                        Foreground="White"
+                        Text="50%" />
+                    <TextBlock
+                        Name="Win01"
+                        Grid.Row="1"
+                        Grid.Column="2"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="25"
+                        FontWeight="Medium"
+                        Foreground="White"
+                        Text="50%" />
+                    <TextBlock
+                        Name="Win02"
+                        Grid.Row="2"
+                        Grid.Column="2"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="25"
+                        FontWeight="Medium"
+                        Foreground="White"
+                        Text="50%" />
+                    <TextBlock
+                        Name="Win03"
+                        Grid.Row="3"
+                        Grid.Column="2"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="25"
+                        FontWeight="Medium"
+                        Foreground="White"
+                        Text="50%" />
+                    <TextBlock
+                        Name="Win04"
+                        Grid.Row="4"
+                        Grid.Column="2"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="25"
+                        FontWeight="Medium"
+                        Foreground="White"
+                        Text="50%" />
+
+                    <!--  KD  -->
+                    <TextBlock
+                        Name="KD00"
+                        Grid.Row="0"
+                        Grid.Column="3"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="25"
+                        FontWeight="Medium"
+                        Foreground="White"
+                        Text="1.23" />
+                    <TextBlock
+                        Name="KD01"
+                        Grid.Row="1"
+                        Grid.Column="3"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="25"
+                        FontWeight="Medium"
+                        Foreground="White"
+                        Text="1.23" />
+                    <TextBlock
+                        Name="KD02"
+                        Grid.Row="2"
+                        Grid.Column="3"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="25"
+                        FontWeight="Medium"
+                        Foreground="White"
+                        Text="1.23" />
+                    <TextBlock
+                        Name="KD03"
+                        Grid.Row="3"
+                        Grid.Column="3"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="25"
+                        FontWeight="Medium"
+                        Foreground="White"
+                        Text="1.23" />
+                    <TextBlock
+                        Name="KD04"
+                        Grid.Row="4"
+                        Grid.Column="3"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="25"
+                        FontWeight="Medium"
+                        Foreground="White"
+                        Text="1.23" />
+                </Grid>
+                <Grid Grid.Column="1" Background="#BF52222F">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="60" />
+                        <ColumnDefinition Width="50*" />
+                        <ColumnDefinition Width="25*" />
+                        <ColumnDefinition Width="25*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="60" />
+                    </Grid.RowDefinitions>
+                    <!--  Ranks  -->
+                    <Image
+                        Name="RankIcon10"
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Width="60"
+                        Height="60"
+                        Source="Images/TX_CompetitiveTier_Large_0.png" />
+                    <Image
+                        Name="RankIcon11"
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        Width="60"
+                        Height="60"
+                        Source="Images/TX_CompetitiveTier_Large_0.png" />
+                    <Image
+                        Name="RankIcon12"
+                        Grid.Row="2"
+                        Grid.Column="0"
+                        Width="60"
+                        Height="60"
+                        Source="Images/TX_CompetitiveTier_Large_0.png" />
+                    <Image
+                        Name="RankIcon13"
+                        Grid.Row="3"
+                        Grid.Column="0"
+                        Width="60"
+                        Height="60"
+                        Source="Images/TX_CompetitiveTier_Large_0.png" />
+                    <Image
+                        Name="RankIcon14"
+                        Grid.Row="4"
+                        Grid.Column="0"
+                        Width="60"
+                        Height="60"
+                        Source="Images/TX_CompetitiveTier_Large_0.png" />
+
+                    <!--  Names  -->
+                    <TextBlock
+                        Name="Name10"
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Margin="5,0,0,0"
+                        VerticalAlignment="Center"
+                        FontSize="25"
+                        FontWeight="Medium"
+                        Foreground="White"
+                        Text="Name" />
+                    <TextBlock
+                        Name="Name11"
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        Margin="5,0,0,0"
+                        VerticalAlignment="Center"
+                        FontSize="25"
+                        FontWeight="Medium"
+                        Foreground="White"
+                        Text="Name" />
+                    <TextBlock
+                        Name="Name12"
+                        Grid.Row="2"
+                        Grid.Column="1"
+                        Margin="5,0,0,0"
+                        VerticalAlignment="Center"
+                        FontSize="25"
+                        FontWeight="Medium"
+                        Foreground="White"
+                        Text="Name" />
+                    <TextBlock
+                        Name="Name13"
+                        Grid.Row="3"
+                        Grid.Column="1"
+                        Margin="5,0,0,0"
+                        VerticalAlignment="Center"
+                        FontSize="25"
+                        FontWeight="Medium"
+                        Foreground="White"
+                        Text="Name" />
+                    <TextBlock
+                        Name="Name14"
+                        Grid.Row="4"
+                        Grid.Column="1"
+                        Margin="5,0,0,0"
+                        VerticalAlignment="Center"
+                        FontSize="25"
+                        FontWeight="Medium"
+                        Foreground="White"
+                        Text="Name" />
+
+                    <!--  Win%  -->
+                    <TextBlock
+                        Name="Win10"
+                        Grid.Row="0"
+                        Grid.Column="2"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="25"
+                        FontWeight="Medium"
+                        Foreground="White"
+                        Text="50%" />
+                    <TextBlock
+                        Name="Win11"
+                        Grid.Row="1"
+                        Grid.Column="2"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="25"
+                        FontWeight="Medium"
+                        Foreground="White"
+                        Text="50%" />
+                    <TextBlock
+                        Name="Win12"
+                        Grid.Row="2"
+                        Grid.Column="2"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="25"
+                        FontWeight="Medium"
+                        Foreground="White"
+                        Text="50%" />
+                    <TextBlock
+                        Name="Win13"
+                        Grid.Row="3"
+                        Grid.Column="2"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="25"
+                        FontWeight="Medium"
+                        Foreground="White"
+                        Text="50%" />
+                    <TextBlock
+                        Name="Win14"
+                        Grid.Row="4"
+                        Grid.Column="2"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="25"
+                        FontWeight="Medium"
+                        Foreground="White"
+                        Text="50%" />
+
+                    <!--  KD  -->
+                    <TextBlock
+                        Name="KD10"
+                        Grid.Row="0"
+                        Grid.Column="3"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="25"
+                        FontWeight="Medium"
+                        Foreground="White"
+                        Text="1.23" />
+                    <TextBlock
+                        Name="KD11"
+                        Grid.Row="1"
+                        Grid.Column="3"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="25"
+                        FontWeight="Medium"
+                        Foreground="White"
+                        Text="1.23" />
+                    <TextBlock
+                        Name="KD12"
+                        Grid.Row="2"
+                        Grid.Column="3"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="25"
+                        FontWeight="Medium"
+                        Foreground="White"
+                        Text="1.23" />
+                    <TextBlock
+                        Name="KD13"
+                        Grid.Row="3"
+                        Grid.Column="3"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="25"
+                        FontWeight="Medium"
+                        Foreground="White"
+                        Text="1.23" />
+                    <TextBlock
+                        Name="KD14"
+                        Grid.Row="4"
+                        Grid.Column="3"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="25"
+                        FontWeight="Medium"
+                        Foreground="White"
+                        Text="1.23" />
+                </Grid>
+            </Grid>
+            <TextBlock
+                Grid.Row="1"
+                Grid.Column="1"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"
+                FontSize="20"
+                FontWeight="Medium"
+                Foreground="White"
+                Text="" />
+        </StackPanel>
+
+        <!--  No Match  -->
+        <StackPanel
+            Name="NoMatch"
+            Grid.Row="1"
+            VerticalAlignment="Center"
+            Visibility="Collapsed">
+            <TextBlock
+                Grid.Row="1"
+                Grid.Column="1"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"
+                FontSize="35"
+                FontWeight="Medium"
+                Foreground="White"
+                Text="No Match In Progress" />
+            <TextBlock
+                Grid.Row="1"
+                Grid.Column="1"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"
+                FontSize="5"
+                FontWeight="Medium"
+                Foreground="White"
+                Text="" />
+            <TextBlock
+                MaxWidth="845"
+                Margin="10,0,10,0"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                FontSize="20"
+                FontWeight="Medium"
+                Foreground="White"
+                Text="A match has to be running with the logged in account to use this feature. Come back in pregame phase to use this feature"
+                TextWrapping="Wrap" />
+        </StackPanel>
+
+        <!--  No Stats  -->
+        <StackPanel
+            Name="NoStats"
+            Grid.Row="1"
+            VerticalAlignment="Center"
+            Visibility="Collapsed">
+            <TextBlock
+                Grid.Row="1"
+                Grid.Column="1"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"
+                FontSize="35"
+                FontWeight="Medium"
+                Foreground="White"
+                Text="No Stats Found" />
+            <TextBlock
+                Grid.Row="1"
+                Grid.Column="1"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"
+                FontSize="5"
+                FontWeight="Medium"
+                Foreground="White"
+                Text="" />
+            <TextBlock
+                MaxWidth="845"
+                Margin="10,0,10,0"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                FontSize="20"
+                FontWeight="Medium"
+                Foreground="White"
+                Text="Run Valorant to get stats"
+                TextWrapping="Wrap" />
+        </StackPanel>
+
+        <!--  Match Data  -->
+        <StackPanel
+            Name="MatchDataPage"
+            Grid.Row="1"
+            Margin="0,0,0,0"
+            VerticalAlignment="Top"
+            Visibility="Collapsed">
+            <StackPanel.Background>
+                <ImageBrush
+                    x:Name="MatchBackgroundImg"
+                    ImageSource="Images/Ascent.png"
+                    Stretch="UniformToFill" />
+            </StackPanel.Background>
+            <TextBlock
+                x:Name="MatchMode"
+                Grid.Row="1"
+                Grid.Column="1"
+                Margin="0,5,0,0"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"
+                FontSize="25"
+                FontWeight="Medium"
+                Foreground="LightGray"
+                Text="Competitive" />
+            <TextBlock
+                Grid.Row="1"
+                Grid.Column="1"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"
+                FontSize="2"
+                FontWeight="Medium"
+                Foreground="LightGray"
+                Text="" />
+            <TextBlock
+                x:Name="MatchMap"
+                Grid.Row="1"
+                Grid.Column="1"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"
+                FontSize="30"
+                FontWeight="Medium"
+                Foreground="White"
+                Text="Ascent" />
+            <Grid Margin="10,0,10,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <TextBlock
+                    x:Name="MatchScore0"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    FontSize="30"
+                    FontWeight="Medium"
+                    Foreground="White"
+                    Text="0" />
+                <TextBlock
+                    x:Name="MatchScore1"
+                    Grid.Column="2"
+                    Grid.ColumnSpan="2"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    FontSize="30"
+                    FontWeight="Medium"
+                    Foreground="White"
+                    Text="0" />
+                <Image
+                    Grid.Column="0"
+                    Grid.ColumnSpan="4"
+                    Width="60"
+                    Height="60"
+                    Source="Images/spike.png" />
+            </Grid>
+            <Grid Margin="10,0,10,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0" Background="#BF00554D">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="60" />
+                        <ColumnDefinition Width="45*" />
+                        <ColumnDefinition Width="30*" />
+                        <ColumnDefinition Width="25*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="60" />
+                    </Grid.RowDefinitions>
+                    <!--  Ranks  -->
+                    <Image
+                        Name="MatchRankIcon00"
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Width="60"
+                        Height="60"
+                        Source="Images/TX_CompetitiveTier_Large_0.png" />
+                    <Image
+                        Name="MatchRankIcon01"
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        Width="60"
+                        Height="60"
+                        Source="Images/TX_CompetitiveTier_Large_0.png" />
+                    <Image
+                        Name="MatchRankIcon02"
+                        Grid.Row="2"
+                        Grid.Column="0"
+                        Width="60"
+                        Height="60"
+                        Source="Images/TX_CompetitiveTier_Large_0.png" />
+                    <Image
+                        Name="MatchRankIcon03"
+                        Grid.Row="3"
+                        Grid.Column="0"
+                        Width="60"
+                        Height="60"
+                        Source="Images/TX_CompetitiveTier_Large_0.png" />
+                    <Image
+                        Name="MatchRankIcon04"
+                        Grid.Row="4"
+                        Grid.Column="0"
+                        Width="60"
+                        Height="60"
+                        Source="Images/TX_CompetitiveTier_Large_0.png" />
+
+                    <!--  Names  -->
+                    <TextBlock
+                        Name="MatchName00"
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Margin="5,0,0,0"
+                        VerticalAlignment="Center"
+                        FontSize="25"
+                        FontWeight="Medium"
+                        Foreground="White"
+                        Text="Name" />
+                    <TextBlock
+                        Name="MatchName01"
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        Margin="5,0,0,0"
+                        VerticalAlignment="Center"
+                        FontSize="25"
+                        FontWeight="Medium"
+                        Foreground="White"
+                        Text="Name" />
+                    <TextBlock
+                        Name="MatchName02"
+                        Grid.Row="2"
+                        Grid.Column="1"
+                        Margin="5,0,0,0"
+                        VerticalAlignment="Center"
+                        FontSize="25"
+                        FontWeight="Medium"
+                        Foreground="White"
+                        Text="Name" />
+                    <TextBlock
+                        Name="MatchName03"
+                        Grid.Row="3"
+                        Grid.Column="1"
+                        Margin="5,0,0,0"
+                        VerticalAlignment="Center"
+                        FontSize="25"
+                        FontWeight="Medium"
+                        Foreground="White"
+                        Text="Name" />
+                    <TextBlock
+                        Name="MatchName04"
+                        Grid.Row="4"
+                        Grid.Column="1"
+                        Margin="5,0,0,0"
+                        VerticalAlignment="Center"
+                        FontSize="25"
+                        FontWeight="Medium"
+                        Foreground="White"
+                        Text="Name" />
+
+                    <!--  Win%  -->
+                    <TextBlock
+                        Name="MatchKDA00"
+                        Grid.Row="0"
+                        Grid.Column="2"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="25"
+                        FontWeight="Medium"
+                        Foreground="White"
+                        Text="00/00/00" />
+                    <TextBlock
+                        Name="MatchKDA01"
+                        Grid.Row="1"
+                        Grid.Column="2"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="25"
+                        FontWeight="Medium"
+                        Foreground="White"
+                        Text="00/00/00" />
+                    <TextBlock
+                        Name="MatchKDA02"
+                        Grid.Row="2"
+                        Grid.Column="2"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="25"
+                        FontWeight="Medium"
+                        Foreground="White"
+                        Text="00/00/00" />
+                    <TextBlock
+                        Name="MatchKDA03"
+                        Grid.Row="3"
+                        Grid.Column="2"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="25"
+                        FontWeight="Medium"
+                        Foreground="White"
+                        Text="00/00/00" />
+                    <TextBlock
+                        Name="MatchKDA04"
+                        Grid.Row="4"
+                        Grid.Column="2"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="25"
+                        FontWeight="Medium"
+                        Foreground="White"
+                        Text="00/00/00" />
+
+                    <!--  KD  -->
+                    <TextBlock
+                        Name="MatchScore00"
+                        Grid.Row="0"
+                        Grid.Column="3"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="25"
+                        FontWeight="Medium"
+                        Foreground="White"
+                        Text="200" />
+                    <TextBlock
+                        Name="MatchScore01"
+                        Grid.Row="1"
+                        Grid.Column="3"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="25"
+                        FontWeight="Medium"
+                        Foreground="White"
+                        Text="200" />
+                    <TextBlock
+                        Name="MatchScore02"
+                        Grid.Row="2"
+                        Grid.Column="3"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="25"
+                        FontWeight="Medium"
+                        Foreground="White"
+                        Text="200" />
+                    <TextBlock
+                        Name="MatchScore03"
+                        Grid.Row="3"
+                        Grid.Column="3"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="25"
+                        FontWeight="Medium"
+                        Foreground="White"
+                        Text="200" />
+                    <TextBlock
+                        Name="MatchScore04"
+                        Grid.Row="4"
+                        Grid.Column="3"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="25"
+                        FontWeight="Medium"
+                        Foreground="White"
+                        Text="200" />
+                </Grid>
+                <Grid Grid.Column="1" Background="#BF52222F">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="60" />
+                        <ColumnDefinition Width="45*" />
+                        <ColumnDefinition Width="35*" />
+                        <ColumnDefinition Width="25*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="60" />
+                    </Grid.RowDefinitions>
+                    <!--  Ranks  -->
+                    <Image
+                        Name="MatchRankIcon10"
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Width="60"
+                        Height="60"
+                        Source="Images/TX_CompetitiveTier_Large_0.png" />
+                    <Image
+                        Name="MatchRankIcon11"
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        Width="60"
+                        Height="60"
+                        Source="Images/TX_CompetitiveTier_Large_0.png" />
+                    <Image
+                        Name="MatchRankIcon12"
+                        Grid.Row="2"
+                        Grid.Column="0"
+                        Width="60"
+                        Height="60"
+                        Source="Images/TX_CompetitiveTier_Large_0.png" />
+                    <Image
+                        Name="MatchRankIcon13"
+                        Grid.Row="3"
+                        Grid.Column="0"
+                        Width="60"
+                        Height="60"
+                        Source="Images/TX_CompetitiveTier_Large_0.png" />
+                    <Image
+                        Name="MatchRankIcon14"
+                        Grid.Row="4"
+                        Grid.Column="0"
+                        Width="60"
+                        Height="60"
+                        Source="Images/TX_CompetitiveTier_Large_0.png" />
+
+                    <!--  Names  -->
+                    <TextBlock
+                        Name="MatchName10"
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Margin="5,0,0,0"
+                        VerticalAlignment="Center"
+                        FontSize="25"
+                        FontWeight="Medium"
+                        Foreground="White"
+                        Text="Name" />
+                    <TextBlock
+                        Name="MatchName11"
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        Margin="5,0,0,0"
+                        VerticalAlignment="Center"
+                        FontSize="25"
+                        FontWeight="Medium"
+                        Foreground="White"
+                        Text="Name" />
+                    <TextBlock
+                        Name="MatchName12"
+                        Grid.Row="2"
+                        Grid.Column="1"
+                        Margin="5,0,0,0"
+                        VerticalAlignment="Center"
+                        FontSize="25"
+                        FontWeight="Medium"
+                        Foreground="White"
+                        Text="Name" />
+                    <TextBlock
+                        Name="MatchName13"
+                        Grid.Row="3"
+                        Grid.Column="1"
+                        Margin="5,0,0,0"
+                        VerticalAlignment="Center"
+                        FontSize="25"
+                        FontWeight="Medium"
+                        Foreground="White"
+                        Text="Name" />
+                    <TextBlock
+                        Name="MatchName14"
+                        Grid.Row="4"
+                        Grid.Column="1"
+                        Margin="5,0,0,0"
+                        VerticalAlignment="Center"
+                        FontSize="25"
+                        FontWeight="Medium"
+                        Foreground="White"
+                        Text="Name" />
+
+                    <!--  Win%  -->
+                    <TextBlock
+                        Name="MatchKDA10"
+                        Grid.Row="0"
+                        Grid.Column="2"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="25"
+                        FontWeight="Medium"
+                        Foreground="White"
+                        Text="00/00/00" />
+                    <TextBlock
+                        Name="MatchKDA11"
+                        Grid.Row="1"
+                        Grid.Column="2"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="25"
+                        FontWeight="Medium"
+                        Foreground="White"
+                        Text="00/00/00" />
+                    <TextBlock
+                        Name="MatchKDA12"
+                        Grid.Row="2"
+                        Grid.Column="2"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="25"
+                        FontWeight="Medium"
+                        Foreground="White"
+                        Text="00/00/00" />
+                    <TextBlock
+                        Name="MatchKDA13"
+                        Grid.Row="3"
+                        Grid.Column="2"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="25"
+                        FontWeight="Medium"
+                        Foreground="White"
+                        Text="00/00/00" />
+                    <TextBlock
+                        Name="MatchKDA14"
+                        Grid.Row="4"
+                        Grid.Column="2"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="25"
+                        FontWeight="Medium"
+                        Foreground="White"
+                        Text="00/00/00" />
+
+                    <!--  KD  -->
+                    <TextBlock
+                        Name="MatchScore10"
+                        Grid.Row="0"
+                        Grid.Column="3"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="25"
+                        FontWeight="Medium"
+                        Foreground="White"
+                        Text="200" />
+                    <TextBlock
+                        Name="MatchScore11"
+                        Grid.Row="1"
+                        Grid.Column="3"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="25"
+                        FontWeight="Medium"
+                        Foreground="White"
+                        Text="200" />
+                    <TextBlock
+                        Name="MatchScore12"
+                        Grid.Row="2"
+                        Grid.Column="3"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="25"
+                        FontWeight="Medium"
+                        Foreground="White"
+                        Text="200" />
+                    <TextBlock
+                        Name="MatchScore13"
+                        Grid.Row="3"
+                        Grid.Column="3"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="25"
+                        FontWeight="Medium"
+                        Foreground="White"
+                        Text="200" />
+                    <TextBlock
+                        Name="MatchScore14"
+                        Grid.Row="4"
+                        Grid.Column="3"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="25"
+                        FontWeight="Medium"
+                        Foreground="White"
+                        Text="200" />
+                </Grid>
+            </Grid>
+            <TextBlock
+                Grid.Row="1"
+                Grid.Column="1"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"
+                FontSize="20"
+                FontWeight="Medium"
+                Foreground="White"
+                Text="" />
+        </StackPanel>
+
+        <!--  Settings Page  -->
+        <StackPanel
+            Name="SettingsPage"
+            Grid.Row="1"
+            Margin="0,15,0,0"
+            VerticalAlignment="Top"
+            Visibility="Collapsed">
+            <ScrollViewer CanContentScroll="True" VerticalScrollBarVisibility="Visible">
+                <StackPanel Height="450">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock
+                            Margin="35,0,0,0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center"
+                            FontSize="30"
+                            FontWeight="Medium"
+                            Foreground="White"
+                            Text="Program Settings" />
+                        <Button
+                            Grid.Row="0"
+                            Grid.RowSpan="2"
+                            Grid.Column="1"
+                            Width="100"
+                            Margin="450,0,0,0"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Center"
+                            mah:ControlsHelper.ContentCharacterCasing="Normal"
+                            BorderThickness="1"
+                            Click="SaveSettings"
+                            Content="Save Settings"
+                            Style="{StaticResource MahApps.Styles.Button.Square.Accent}" />
+                    </StackPanel>
+                    <Border
+                        Height="70"
+                        Margin="20,10,20,0"
+                        VerticalAlignment="Top"
+                        Background="#181A20"
+                        BorderBrush="#181A20"
+                        BorderThickness="3"
+                        CornerRadius="10">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="66*" />
+                                <ColumnDefinition Width="33*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="60*" />
+                                <RowDefinition Height="40*" />
+                            </Grid.RowDefinitions>
+                            <TextBlock
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                Margin="10,0,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Center"
+                                FontSize="25"
+                                FontWeight="Medium"
+                                Foreground="White"
+                                Text="Run on Startup" />
+                            <TextBlock
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                Margin="10,0,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                FontSize="15"
+                                FontWeight="Medium"
+                                Foreground="LightGray"
+                                Text="Lets the program run when your computer starts" />
+                            <mah:ToggleSwitch
+                                x:Name="StartupSwitch"
+                                Grid.Row="0"
+                                Grid.RowSpan="2"
+                                Grid.Column="1"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Center"
+                                Content="" />
+                        </Grid>
+                    </Border>
+                    <Border
+                        Height="70"
+                        Margin="20,10,20,0"
+                        VerticalAlignment="Top"
+                        Background="#181A20"
+                        BorderBrush="#181A20"
+                        BorderThickness="3"
+                        CornerRadius="10">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="66*" />
+                                <ColumnDefinition Width="33*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="60*" />
+                                <RowDefinition Height="40*" />
+                            </Grid.RowDefinitions>
+                            <TextBlock
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                Margin="10,0,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Center"
+                                FontSize="25"
+                                FontWeight="Medium"
+                                Foreground="White"
+                                Text="Track live games" />
+                            <TextBlock
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                Margin="10,0,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                FontSize="15"
+                                FontWeight="Medium"
+                                Foreground="LightGray"
+                                Text="Shows data for the players in your game" />
+                            <mah:ToggleSwitch
+                                x:Name="LiveGamesSwitch"
+                                Grid.Row="0"
+                                Grid.RowSpan="2"
+                                Grid.Column="1"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Center"
+                                Content="" />
+                        </Grid>
+                    </Border>
+                    <Border
+                        Height="70"
+                        Margin="20,10,20,0"
+                        VerticalAlignment="Top"
+                        Background="#181A20"
+                        BorderBrush="#181A20"
+                        BorderThickness="3"
+                        CornerRadius="10">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="66*" />
+                                <ColumnDefinition Width="33*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="60*" />
+                                <RowDefinition Height="40*" />
+                            </Grid.RowDefinitions>
+                            <TextBlock
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                Margin="10,0,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Center"
+                                FontSize="25"
+                                FontWeight="Medium"
+                                Foreground="White"
+                                Text="Minimize to Tray" />
+                            <TextBlock
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                Margin="10,0,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                FontSize="15"
+                                FontWeight="Medium"
+                                Foreground="LightGray"
+                                Text="The program will minimize to the system tray when closing" />
+                            <mah:ToggleSwitch
+                                x:Name="TraySwitch"
+                                Grid.Row="0"
+                                Grid.RowSpan="2"
+                                Grid.Column="1"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Center"
+                                Content="" />
+                        </Grid>
+                    </Border>
+                    <Border
+                        Height="70"
+                        Margin="20,10,20,0"
+                        VerticalAlignment="Top"
+                        Background="#181A20"
+                        BorderBrush="#181A20"
+                        BorderThickness="3"
+                        CornerRadius="10">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="66*" />
+                                <ColumnDefinition Width="33*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="60*" />
+                                <RowDefinition Height="40*" />
+                            </Grid.RowDefinitions>
+                            <TextBlock
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                Margin="10,0,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Center"
+                                FontSize="25"
+                                FontWeight="Medium"
+                                Foreground="White"
+                                Text="Check for updates" />
+                            <TextBlock
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                Margin="10,0,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                FontSize="15"
+                                FontWeight="Medium"
+                                Foreground="LightGray"
+                                Text="Checks the server to see if there are updates avalable" />
+                            <Button
+                                x:Name="UpdateButton"
+                                Grid.Row="0"
+                                Grid.RowSpan="2"
+                                Grid.Column="1"
+                                Width="100"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                mah:ControlsHelper.ContentCharacterCasing="Normal"
+                                BorderThickness="1"
+                                Click="Button_Click"
+                                Content="Check"
+                                Style="{StaticResource MahApps.Styles.Button.Square.Accent}" />
+                        </Grid>
+                    </Border>
+                    <TextBlock
+                        Margin="35,15,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        FontSize="30"
+                        FontWeight="Medium"
+                        Foreground="White"
+                        Text="Valorant Settings" />
+                    <Border
+                        Height="70"
+                        Margin="20,10,20,0"
+                        VerticalAlignment="Top"
+                        Background="#181A20"
+                        BorderBrush="#181A20"
+                        BorderThickness="3"
+                        CornerRadius="10">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="66*" />
+                                <ColumnDefinition Width="33*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="60*" />
+                                <RowDefinition Height="40*" />
+                            </Grid.RowDefinitions>
+                            <TextBlock
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                Margin="10,0,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Center"
+                                FontSize="25"
+                                FontWeight="Medium"
+                                Foreground="White"
+                                Text="Render Resolution" />
+                            <TextBlock
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                Margin="10,0,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                FontSize="15"
+                                FontWeight="Medium"
+                                Foreground="LightGray"
+                                Text="Change the percentage of your resolution your game runs at" />
+                            <StackPanel
+                                Grid.Row="0"
+                                Grid.RowSpan="2"
+                                Grid.Column="1"
+                                Orientation="Vertical">
+                                <TextBlock
+                                    Name="RezText"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    FontSize="25"
+                                    FontWeight="Medium"
+                                    Foreground="White"
+                                    Text="100%" />
+                                <Slider
+                                    x:Name="RezSlider"
+                                    Width="150"
+                                    HorizontalAlignment="Center"
+                                    DataContext="100%"
+                                    DragLeave="ResSave"
+                                    Maximum="100"
+                                    Minimum="50"
+                                    ValueChanged="RezSlider_ValueChanged"
+                                    Value="100" />
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                    <TextBlock
+                        Margin="35,15,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        FontSize="30"
+                        FontWeight="Medium"
+                        Foreground="White"
+                        Text="App Info" />
+                    <Border
+                        Height="70"
+                        Margin="20,10,20,0"
+                        VerticalAlignment="Top"
+                        Background="#181A20"
+                        BorderBrush="#181A20"
+                        BorderThickness="3"
+                        CornerRadius="10">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="66*" />
+                                <ColumnDefinition Width="33*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="60*" />
+                                <RowDefinition Height="40*" />
+                            </Grid.RowDefinitions>
+                            <TextBlock
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                Margin="10,0,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Center"
+                                FontSize="25"
+                                FontWeight="Medium"
+                                Foreground="White"
+                                Text="Version" />
+                            <TextBlock
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                Margin="10,0,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                FontSize="15"
+                                FontWeight="Medium"
+                                Foreground="LightGray"
+                                Text="Current app version" />
+                            <TextBlock
+                                Name="VersionText"
+                                Grid.Row="0"
+                                Grid.RowSpan="2"
+                                Grid.Column="1"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                FontSize="25"
+                                FontWeight="Medium"
+                                Foreground="White"
+                                Text="v0.2.2" />
+                        </Grid>
+                    </Border>
+                </StackPanel>
+            </ScrollViewer>
+        </StackPanel>
+
+        <mah:ProgressRing
+            Name="Loader"
+            Grid.Row="1"
+            Width="100"
+            Height="100"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Visibility="Collapsed" />
+    </Grid>
+</Window>

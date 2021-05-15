@@ -1,0 +1,49 @@
+C:\Users\brian\source\repos\uselessapp\uselessapp\bin\Release\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\brian\source\repos\uselessapp\uselessapp\bin\Release\Microsoft.IdentityModel.Logging.dll
+C:\Users\brian\source\repos\uselessapp\uselessapp\bin\Release\Microsoft.IdentityModel.Tokens.dll
+C:\Users\brian\source\repos\uselessapp\uselessapp\bin\Release\Newtonsoft.Json.dll
+C:\Users\brian\source\repos\uselessapp\uselessapp\bin\Release\RestSharp.dll
+C:\Users\brian\source\repos\uselessapp\uselessapp\bin\Release\WpfAnimatedGif.dll
+C:\Users\brian\source\repos\uselessapp\uselessapp\bin\Release\Microsoft.IdentityModel.JsonWebTokens.xml
+C:\Users\brian\source\repos\uselessapp\uselessapp\bin\Release\Microsoft.IdentityModel.Logging.xml
+C:\Users\brian\source\repos\uselessapp\uselessapp\bin\Release\Microsoft.IdentityModel.Tokens.xml
+C:\Users\brian\source\repos\uselessapp\uselessapp\bin\Release\Newtonsoft.Json.xml
+C:\Users\brian\source\repos\uselessapp\uselessapp\bin\Release\RestSharp.xml
+C:\Users\brian\source\repos\uselessapp\uselessapp\bin\Release\WpfAnimatedGif.pdb
+C:\Users\brian\source\repos\uselessapp\uselessapp\bin\Release\WpfAnimatedGif.xml
+C:\Users\brian\source\repos\uselessapp\uselessapp\obj\Release\uselessapp.csprojAssemblyReference.cache
+C:\Users\brian\source\repos\uselessapp\uselessapp\obj\Release\MainWindow.baml
+C:\Users\brian\source\repos\uselessapp\uselessapp\obj\Release\MainWindow.g.cs
+C:\Users\brian\source\repos\uselessapp\uselessapp\obj\Release\App.g.cs
+C:\Users\brian\source\repos\uselessapp\uselessapp\obj\Release\uselessapp.Properties.Resources.resources
+C:\Users\brian\source\repos\uselessapp\uselessapp\obj\Release\uselessapp.csproj.GenerateResource.cache
+C:\Users\brian\source\repos\uselessapp\uselessapp\obj\Release\uselessapp.csproj.CoreCompileInputs.cache
+C:\Users\brian\source\repos\uselessapp\uselessapp\obj\Release\uselessapp.csproj.CopyComplete
+C:\Users\brian\source\repos\uselessapp\uselessapp\bin\Release\AutoUpdater.NET.dll
+C:\Users\brian\source\repos\uselessapp\uselessapp\bin\Release\AutoUpdater.NET.pdb
+C:\Users\brian\source\repos\uselessapp\uselessapp\bin\Release\AutoUpdater.NET.xml
+C:\Users\brian\source\repos\uselessapp\uselessapp\bin\Release\StatsVal Companion.exe.config
+C:\Users\brian\source\repos\uselessapp\uselessapp\bin\Release\StatsVal Companion.exe.manifest
+C:\Users\brian\source\repos\uselessapp\uselessapp\bin\Release\StatsVal Companion.application
+C:\Users\brian\source\repos\uselessapp\uselessapp\bin\Release\StatsVal Companion.exe
+C:\Users\brian\source\repos\uselessapp\uselessapp\bin\Release\StatsVal Companion.pdb
+C:\Users\brian\source\repos\uselessapp\uselessapp\obj\Release\StatsVal Companion_MarkupCompile.cache
+C:\Users\brian\source\repos\uselessapp\uselessapp\obj\Release\StatsVal Companion.g.resources
+C:\Users\brian\source\repos\uselessapp\uselessapp\obj\Release\StatsVal Companion.exe.manifest
+C:\Users\brian\source\repos\uselessapp\uselessapp\obj\Release\StatsVal Companion.application
+C:\Users\brian\source\repos\uselessapp\uselessapp\obj\Release\StatsVal Companion.exe
+C:\Users\brian\source\repos\uselessapp\uselessapp\obj\Release\StatsVal Companion.pdb
+C:\Users\brian\source\repos\uselessapp\uselessapp\bin\Release\ControlzEx.dll
+C:\Users\brian\source\repos\uselessapp\uselessapp\bin\Release\MahApps.Metro.dll
+C:\Users\brian\source\repos\uselessapp\uselessapp\bin\Release\Microsoft.Xaml.Behaviors.dll
+C:\Users\brian\source\repos\uselessapp\uselessapp\bin\Release\ControlzEx.pdb
+C:\Users\brian\source\repos\uselessapp\uselessapp\bin\Release\ControlzEx.xml
+C:\Users\brian\source\repos\uselessapp\uselessapp\bin\Release\MahApps.Metro.pdb
+C:\Users\brian\source\repos\uselessapp\uselessapp\bin\Release\MahApps.Metro.xml
+C:\Users\brian\source\repos\uselessapp\uselessapp\bin\Release\Microsoft.Xaml.Behaviors.pdb
+C:\Users\brian\source\repos\uselessapp\uselessapp\bin\Release\Microsoft.Xaml.Behaviors.xml
+C:\Users\brian\source\repos\uselessapp\uselessapp\bin\Release\de\MahApps.Metro.resources.dll
+C:\Users\brian\source\repos\uselessapp\uselessapp\obj\Release\StatsVal Companion_MarkupCompile.lref
+C:\Users\brian\source\repos\uselessapp\uselessapp\obj\Release\App.baml
+C:\Users\brian\source\repos\uselessapp\uselessapp\bin\Release\INIFileParser.dll
+C:\Users\brian\source\repos\uselessapp\uselessapp\bin\Release\INIFileParser.xml
